@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<CommSettings>
+  <Param name="ServerHost" value="10.235.63.252" descr="Имя компьютера или IP-адрес SCADA-Сервера" />
+  <Param name="ServerPort" value="10000" descr="Номер TCP-порта SCADA-Сервера" />
+  <Param name="ServerUser" value="ScadaApi" descr="Имя пользователя для подключения к SCADA-Серверу" />
+  <Param name="ServerPwd" value="ScadaApi" descr="Пароль пользователя для подключения к SCADA-Серверу" />
+  <Param name="ServerTimeout" value="10000" descr="Таймаут ожидания ответа SCADA-Сервера, мс" />
+</CommSettings>

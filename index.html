@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
+    <title>Интерактивная карта мониторинга УКУТ</title>
+   <!-- <link rel="shortcut icon" href="favicon.ico" type='image/x-icon' /> -->
+    <link rel="stylesheet" type="text/css" href="css/ukuts.css" />
+    <link rel="stylesheet" href="inc/webix/skins/light.css" type="text/css" media="screen" charset="utf-8">
+    <link class="include" rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+    <script type="text/javascript" src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU"></script>
+    <script type="text/javascript" src="inc/piechart-clusterer.js"></script>
+    <script type="text/javascript" src="inc/jquery.min.js"></script>
+    <script type="text/javascript" src="inc/ukuts.js" charset="utf-8"></script>
+    <script type="text/javascript" src="inc/window_analiz.js" charset="utf-8"></script>
+    <script type="text/javascript" src="inc/tickets.js" charset="utf-8"></script>
+    <script type="text/javascript" src="inc/moment.js" charset="utf-8"></script>
+    <script type="text/javascript" src="inc/ru.js" charset="utf-8"></script>
+    <script type="text/javascript" src="inc/GEO.js" charset="utf-8"></script>
+    <script src="inc/webix/webix.js" type="text/javascript"></script>
+    <script src="inc/webix/i18n/ru.js" type="text/javascript" charset="utf-8"></script>
+    <script src="inc/app.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <div id="loading-div" style="display:none; border-radius:16px;">
+        <img src="img/loading.gif" alt="" />&nbsp;<span style="font-weight:bold" id="loading-text">Обновление показаний на карте</span>
+    </div>
+    <div id="shadow" style="display:none; border-radius:16px;">
+        <div style="position:relative; margin-top:-20px; z-index:10; text-align:right">
+            <span class='sImg' style='background-position:-144px -16px'>
+                <img src='/img/pix.gif' width='16' title='Закрыть' onclick='HideDialog("chart")' style='cursor:pointer' />
+            </span>
+        </div>
+    </div>
+    <div id="dialog_regulator" style="display:none; z-index:5; border-radius:16px;">
+        <div style="position:relative; margin-top:-5px; z-index:10; text-align:right;">
+            <span class='sImg' style='background-position:-144px -16px'>
+                <img src='/img/pix.gif' width='16' title='Закрыть' onclick='HideDialog("dialog_regulator")' style='cursor:pointer' /><br>
+            </span>
+            <div id="regulator" style="width: 397px; height: 198px; display:none" ;></div>
+            <object id="regulator_svg" data="img/scheme/trm2101.svg" type="image/svg+xml"></object>
+        </div>
+    </div>
+  
+
+
+
+    <div id="map" style="position:absolute; z-index:1"></div>
+    <div id="mainmenu">
+        <button onmouseover="ShowSubMenu(this,'stypes')" onmouseout="MenuOut('stypes')" title="Какие типы УКУТ показать на карте?">
+            <span class="sImg" style="background-position:-192px -16px"><img src="/img/pix.gif" width="16" /></span>
+        </button>&nbsp;
+
+
+    </div>
+    <div class="submenu" id="stypes" onmouseover="clearTimeout(menutimer)" onmouseout="MenuOut('stypes')">
+        <input id="chk0" onchange="SetShown(0,0,this.checked)" type="checkbox" value="1" checked><span class='sImg' style='background-position:-144px 0px'><img src='/img/pix.gif' width='16' /></span>&nbsp;<a onclick="SetShown(0,1)" class="hover" href="#">Нет связи</a>
+        <br>
+        <input id="chk1" onchange="SetShown(1,0,this.checked)" type="checkbox" value="1" checked><span class='sImg' style='background-position:-48px 0px'><img src='/img/pix.gif' width='16' /></span>&nbsp;<a onclick="SetShown(1,1)" class="hover" href="#">Занижение</a>
+        <br>
+        <input id="chk2" onchange="SetShown(2,0,this.checked)" type="checkbox" value="1" checked><span class="sImg" style="background-position:-16px 0px"><img src="/img/pix.gif" width="16" /></span>&nbsp;<a onclick="SetShown(2,1)" class="hover" href="#">Норма</a>
+        <br>
+        <input id="chk3" onchange="SetShown(3,0,this.checked)" type="checkbox" value="1" checked><span class='sImg' style='background-position:0px 0px'><img src='/img/pix.gif' width='16' /></span>&nbsp;<a onclick="SetShown(3,1)" class="hover" href="#">Превышение</a>
+        <br>
+        <input id="chk4" onchange="SetShown(4,0,this.checked)" type="checkbox" value="1" checked><span class='sImg' style='background-position:-144px 0px'><img src='/img/pix.gif' width='16' /></span>&nbsp;<a onclick="SetShown(4,1)" class="hover" href="#">Неисправен ТВЧ</a>
+        <br>
+        <input id="chk10" onchange="SetShown(10,0,this.checked)" type="checkbox" value="1" checked><span class='sImg' style='background-position:-192px 0px'><img src='/img/pix.gif' width='16' /></span>&nbsp;<a onclick="SetShown(10,1)" class="hover" href="#">Электросчетчики</a>
+        <br>
+
+    </div>
+</body>
+</html>

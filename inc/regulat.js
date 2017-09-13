@@ -1,0 +1,4 @@
+function SetUstav()
+{
+alert("OK");
+}

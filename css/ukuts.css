@@ -1,0 +1,247 @@
+html, body, #map {
+	width:  100%;
+	height: 100%; 
+	margin: 0;
+	padding:0;
+	position: absolute;}
+input, textarea, select, button {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14px;
+	vertical-align:middle; }
+td,th {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;	}
+body {
+	height: 100%;
+	position: relative;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;	}
+ul {
+	margin:0px;
+	padding: 2px;
+	margin-left: 20px;
+	list-style-type:disc; }
+table {
+	padding:0px;
+	border: 1px;
+	border-spacing:0px;	}
+label {
+	cursor:pointer; }
+img {
+	vertical-align:middle;
+	border:0px; }
+img.btn {
+	cursor:pointer;
+	border:0px;	}
+.BigFontTextField {
+    font-style: italic;
+	font-size:20px;
+}
+.sImg {
+	background-image: url(/img/img26.png);
+	background-position: -16px -0px;
+	background-repeat: no-repeat;
+	height: 16px;
+	width: 16px; }
+p.about {
+	font-family:"Times New Roman", Times, serif;
+	font-size:20px;	}
+.spoiler {
+	font-family:"Times New Roman", Times, serif;
+	font-size:14px;
+	display:none;
+	background-color:#FFFFFF;
+	padding:5px; }
+.click {
+	cursor:pointer;	}
+button {
+	margin:  0px;
+	padding: 0px;
+	height: 28px;
+	min-width: 28px;
+	min-height:28px;
+	padding-left:3px;
+	padding-right:3px; }
+.submenu {
+	background-color: #EAEBF0;
+	display:none;
+	position:absolute;
+	z-index: 200;
+	margin: 0px;
+	padding: 5px;
+	border-radius:6px;
+	border: 1px solid; }
+a:link {
+	color: #003399;
+	text-decoration: underline; }
+a:visited {
+	color: #003399;
+	text-decoration: underline; }
+a:hover {
+	color: #003399;
+	text-decoration: underline; }
+a:active {
+	color: #003399;
+	text-decoration: underline; }
+a.hover:link {
+	text-decoration: none; }
+a.hover:visited {
+	text-decoration: none; }
+a.hover:hover {
+	text-decoration: underline; }
+a.hover:active {
+	text-decoration: underline; }
+#banner {
+	font-family:"Times New Roman", Times, serif;
+	font-size:18px;
+	position: absolute;
+	top: 40px;
+	left: 600px;
+	padding: 5px;
+	background-color:#A8EFF2;
+	border: solid 1px #666666; }
+#mainmenu {
+	position: absolute;
+	z-index: 100;
+	left: 100px;
+	top: 6px; }
+#shadow {
+	position: absolute;
+	background-color: #000000;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%; }
+#link {
+	position: absolute;
+	z-index: 100;
+	left: 5px;
+	bottom: 40px;
+	font-size:12px;
+	font-weight:bold;
+	color: #FFF; }
+#divwin {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	border: 1px solid gray;
+	background: white;
+	display: none;
+	padding: 20px 20px 20px 20px;
+	text-align: center;}
+ /* use a semi-transparent image for the overlay */
+      #overlay {
+      background-image:url(transparent.png);
+      color:#efefef;
+      }
+  /* container for external content. uses vertical scrollbar, if needed */
+      div.wrap {
+      height:441px;
+      overflow-y:auto;
+      }
+.spoiler >  input + .box > blockquote{
+    display: none;
+}
+.spoiler >  input:checked + .box > blockquote {
+    display: block;
+}
+.spoiler >  input[type="checkbox"] {
+    cursor: pointer;
+    border-color:transparent!important;
+    border-style:none!important;
+    background:transparent none!important;
+    position:relative;z-index:1;
+    margin:-10px 0 -30px -230px;
+ }
+.spoiler >  input[type="checkbox"]:focus {
+    outline:none;	/* Убираем обводку в ИЕ8 при "фокусе" */
+}
+.spoiler span.close,
+.spoiler span.open{
+    padding-left:22px;
+    color: #00f!important;
+    text-decoration: underline;
+}
+.spoiler >  input +  .box > span.close {
+    display: none;
+}
+.spoiler >  input:checked +  .box > span.close {
+    background: url(http://st0.bbcorp.ru/img/minus.png) 4px 60% no-repeat;
+    display: inline;
+}
+.spoiler >  input:checked  + .box > span.open {
+    display: none;
+}
+.spoiler >  input +  .box >  span.open {
+    background: url(http://st0.bbcorp.ru/img/plus.png) 4px  60% no-repeat;
+    display: inline;
+}
+.spoiler blockquote,
+.spoiler{
+    padding:1em;
+    border-radius:15px;
+    -webkit-border-radius:15px;
+    -khtml-border-radius:15px;
+    -moz-border-radius:15px;
+    -o-border-radius:15px;
+    -ms-border-radius:15px;
+}
+.spoiler {
+    overflow-x:hidden;
+    box-shadow: 0px 3px 8px #808080;
+    border:#E5E5E5 solid 2px;
+    -webkit-box-shadow:0px 3px 8px #808080;
+    -khtml-box-shadow:0px 3px 8px #808080;
+    -moz-box-shadow:0px 3px 8px #808080;
+    -ms-box-shadow:0px 3px 8px #808080;
+}
+.spoiler blockquote {
+   margin-top:12px;
+   min-height: 23px;
+   border:#CDCDCD 2px dashed;
+}
+#closeButton {
+   position: absolute;
+   top: 0px;
+   right: 0px;
+   border-bottom: 1px solid gray;
+   border-left: 1px solid gray;
+   font-weight: bold;
+   cursor: pointer;
+   padding: 2px 4px 2px 4px;
+}
+.my-hint {
+    font-family: Arial;
+    font-size:13px;
+    position: relative;
+        }
+.block{
+display:none;
+}
+#my-listbox {
+            top: auto;
+            left: auto;
+}
+.sidebarcss {
+ width: 200px;
+ height: 300px; 
+border-radius: 25px;
+    border: 2px solid #8AC007;
+    padding: 20px;
+	text-align: left;
+}
+.highlight{
+			background-color:#FFAAAA;
+		}
+.errlight{
+			background-color:#A0A0A0;
+		}
+.lowlight{
+			background-color:#66FFFF;
+		}
+.tickets_body {
+  font-size: 13px;
+}
+.multiline{
+            line-height: 30px !important;
+        }
